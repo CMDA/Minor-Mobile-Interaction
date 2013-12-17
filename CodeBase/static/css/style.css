@@ -1,0 +1,34 @@
+/* General styles, mobile first */
+* {
+	box-sizing:border-box;
+	padding:0;
+	margin:0;
+}
+html, body {
+	height: 100%;
+}
+
+body {
+	font-size:100%;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: 300;
+	color:#333;
+}
+section,
+.loaded  {
+	display:none;
+}
+section.active {
+	display:block;
+}
+#plus-min  a {
+	font-size: 3em;
+	display:block;
+	line-height:2;
+	text-align:center;
+	background:#333;
+	color:#fff;
+	border: 1px solid #000;
+	border-width:1px 0;
+	text-decoration: none;
+}

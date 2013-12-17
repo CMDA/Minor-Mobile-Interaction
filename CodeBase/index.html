@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<title>Base WebApp with Cordova (PhoneGap)</title>
+	<link href="static/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<header id="brand">
+		<h1>Base WebApp with Cordova (PhoneGap)</h1>
+	</header>
+
+	<main>
+		<section data-route="sensor">
+			<header>
+				<h1>Sensor section</h1>
+			</header>
+			<article>
+				<header>
+			    	<h1><output>1</output> Koeien</h1>
+			    </header>
+			    
+			    <ul id="plus-min">
+			    	<li>
+			    		<a href="#" id="plus">+</a>
+			    	</li>
+			    	<li>
+			    		<a href="#" id="min">-</a>
+			    	</li>
+			    </ul>
+			</article>
+		</section>
+
+		<section data-route="about">
+			<header>
+				<h1>About section</h1>
+			</header>
+
+			<article>
+				<header>
+					<h1>Base web app with PhoneGap integration</h1>
+				</header>
+
+				<p>This app is build with the following micro libraries:</p>
+
+				<ul>
+					<li>
+						<a href="http://quojs.tapquo.com/">
+							<h2>Quo.js</h2>
+							A jQuery alternative handling, gestures, dom manipulation and ajax.
+						</a>
+					</li>
+					<li>
+						<a href="http://quojs.tapquo.com/">
+							<h2>Routie.js</h2>
+							Routie is a javascript hash routing library, handling the states of the application.
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/leonidas/transparency">
+							<h2>Transparancy.js</h2>
+							Transparency is a semantic template engine for the browser, separating markup and behavior.
+						</a>
+					</li>
+				</ul>
+
+			</article>
+		</section>
+
+	</main>
+	
+	<footer>
+		<nav>
+			<ul>
+				<li><a href="#/sensor">Sensor</a></li>
+				<li><a href="#/about">About</a></li>
+			</ul>
+		</nav>
+	</footer>
+
+	<progress class="loaded"></progress>
+
+	<!-- Libs -->
+	<script src="static/js/lib/routie.min.js"></script>
+	<script src="static/js/lib/transparancy.min.js" type="text/javascript"></script>
+	<script src="static/js/lib/quo.min.js"></script>
+	<script src="static/js/lib/require.js"></script>
+	<script src="static/js/lib/cordova.js"></script>
+	<script src="static/js/lib/shake.js"></script>
+
+
+	<!-- Application -->
+	<script src="static/js/namespace.js"></script>
+	<script src="static/js/app.js"></script>
+
+	<script src="http://127.0.0.1:8080/target/target-script-min.js"></script
+	
+</body>
+</html>
