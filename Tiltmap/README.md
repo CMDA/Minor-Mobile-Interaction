@@ -2,7 +2,7 @@
 
 ## Voorbeeld gebruik van accelerometer
 
-Om dit voorbeeld te gebruiken, download Leaflet.js 0.7.2 en stop deze library in de 'vendor' map.
+Om dit voorbeeld te gebruiken, download Leaflet.js 0.7.2 en plaats de map 'leaflet-0.7.2' in de 'vendor' map.
 
 [http://leafletjs.com/download.html](Leaflet.js)  
 
