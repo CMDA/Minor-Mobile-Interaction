@@ -7,6 +7,7 @@
 
 	var controller = {
 		init: function () {
+			navigator.splashscreen.hide();
 			console.log('test');
 		}
 	};
