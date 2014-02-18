@@ -1,0 +1,22 @@
+/* Prevent copy paste for all elements except text fields */
+*  { 
+	-webkit-user-select:none; 
+	-webkit-tap-highlight-color:rgba(255, 255, 255, 0); 
+}
+body { 
+	background-color:white; 
+	color:black; 
+}
+input, textarea  { 
+	-webkit-user-select:text; 
+}
+img {
+	display:none;
+}
+img#small {
+	width:60px;
+	height:60px;
+}
+.show {
+	display:block;
+}
