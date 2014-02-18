@@ -37,7 +37,7 @@
       var thumbnail = document.getElementById('thumbnail');
 
       // Unhide image elements
-      thumbnail.addClass('show');
+      thumbnail.classlist.add('show');
 
       // Show the captured photo
       thumbnail.src = "data:image/jpeg;base64," + data;
