@@ -34,13 +34,13 @@
   var camera = {
     capture: function (data) {
       // Get image handle
-      var small = document.getElementById('small');
+      var thumbnail = document.getElementById('thumbnail');
 
       // Unhide image elements
-      small.addClass('show');
+      thumbnail.addClass('show');
 
       // Show the captured photo
-      small.src = "data:image/jpeg;base64," + data;
+      thumbnail.src = "data:image/jpeg;base64," + data;
     },
     URI: function () {
 
