@@ -91,8 +91,6 @@
 
 	utils.init();
   	app.init();
-
-
 })();
 
 
