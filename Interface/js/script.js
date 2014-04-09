@@ -11,17 +11,24 @@
 
   	var app = {
   		init: function() {
-  			var self = this;
-
-  			utils.init();
   			this.router();
   				
   			document.addEventListener('gesturechange', this, false);
 			document.addEventListener('scroll', this, false);
   		},
 
+  		router: function() {
+  			routie({
+			    '/some-section': function() {
+			    	section.toggle('some-section');
+				},
+			    '/some-other-section': function(route) {
+			    	section.toggle('some-other-section');
+				}
+			});
+  		},
+
   		handleEvent: function(e) {
-        	
         	var scroll = el.scrollTop,
 				i = 0, 
 				l = els.length;
@@ -40,28 +47,17 @@
 			position = scroll;
   		},
 
-  		router: function() {
-  			routie({
-			    '/some-section': function() {
-			    	section.toggle('some-section');
-				},
-			    '/some-other-section': function(route) {
-			    	section.toggle('some-other-section');
-				}
-			});
-  		}
   	};
 
   	var section = {
   		toggle: function(route) {
-  			var self 	= this,
-  				panel 	= $('[data-route='+ route +']'),
+  			var panel 	= $('[data-route='+ route +']'),
   				front 	= /front-panel/.test(panel.className);
-  			
-  			this.fp = document.getElementsByClassName('front-panel')[0];
-  			this.bp = document.getElementsByClassName('back-panel')[0];
 
-  			this.bp.addEventListener('webkitTransitionEnd',self.reset,false)
+  			this.fp = $('.front-panel');
+  			this.bp = $('.back-panel');
+
+  			this.bp.addEventListener('webkitTransitionEnd',this,false)
 
   			if(!(panel == this.fp)){
   				this.fp.classList.add('out');
@@ -72,9 +68,9 @@
   			}
   		},
 
-  		reset: function(){
-  			section.fp.classList.remove('out','front-panel');
-  			section.fp.classList.add('back-panel');
+  		handleEvent: function() {
+  			this.fp.classList.remove('out','front-panel');
+  			this.fp.classList.add('back-panel');
   		}
   	};
 
@@ -93,7 +89,9 @@
 		}
 	};
 
+	utils.init();
   	app.init();
+
 
 })();
 
