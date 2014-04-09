@@ -48,25 +48,6 @@
 			    	section.toggle('some-other-section');
 				}
 			});
-  		},
-
-  		scroll: function() {
-  			var scroll = el.scrollTop,
-				i = 0, 
-				l = els.length;
-
-			if (scroll > position && (scroll + wHeight) < oHeight && position > 0) {
-				// scrolling Down
-				for (;i < l;i++) {
-				    els[i].classList.add('shrink');
-				};
-			} else {
-				// scrolling Up
-				for (;i < l;i++) {
-				    els[i].classList.remove('shrink');
-				};
-			}
-			position = scroll;
   		}
   	};
 
