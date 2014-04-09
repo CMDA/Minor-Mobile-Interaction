@@ -1,5 +1,7 @@
 (function(){
-	var scrollTop 	= (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop,
+	'use strict';
+
+	var scrollTop 	= document.body.scrollTop,
   		el 			= document.body,
   		els 		= document.querySelectorAll('.meta'),
   		position 	= el.scrollTop,
@@ -14,8 +16,27 @@
   			utils.init();
   			this.router();
   				
-  			document.addEventListener('gesturechange', self.scroll, false);
-			document.addEventListener('scroll', self.scroll, false);
+  			document.addEventListener('gesturechange', this, false);
+			document.addEventListener('scroll', this, false);
+  		},
+
+  		handleEvent: function(e) {
+        	var scroll = el.scrollTop,
+				i = 0, 
+				l = els.length;
+
+			if (scroll > position && (scroll + wHeight) < oHeight && position > 0) {
+				// scrolling Down
+				for (;i < l;i++) {
+				    els[i].classList.add('shrink');
+				};
+			} else {
+				// scrolling Up
+				for (;i < l;i++) {
+				    els[i].classList.remove('shrink');
+				};
+			}
+			position = scroll;
   		},
 
   		router: function() {
@@ -50,9 +71,28 @@
   	};
 
   	var section = {
-  		toggle: function(section) {
-  			console.log(section);
+  		toggle: function(route) {
+  			var self 	= this,
+  				panel 	= $('[data-route='+ route +']'),
+  				front 	= /front-panel/.test(panel.className);
   			
+  			this.fp = document.getElementsByClassName('front-panel')[0];
+  			this.bp = document.getElementsByClassName('back-panel')[0];
+
+  			this.bp.addEventListener('webkitTransitionEnd',self.reset,false)
+
+  			if(!(panel == this.fp)){
+  				this.fp.classList.add('out');
+  				this.bp.classList.remove('back-panel');
+  				this.bp.classList.add('front-panel');
+  			} else {
+  				// to do: active navigation
+  			}
+  		},
+
+  		reset: function(){
+  			section.fp.classList.remove('out','front-panel');
+  			section.fp.classList.add('back-panel');
   		}
   	};
 
