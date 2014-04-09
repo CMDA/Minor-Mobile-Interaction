@@ -21,6 +21,7 @@
   		},
 
   		handleEvent: function(e) {
+        	
         	var scroll = el.scrollTop,
 				i = 0, 
 				l = els.length;
